@@ -1,7 +1,5 @@
 package guru.springframework.recipeapp.domain;
 
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.*;
 import java.util.Set;
 
