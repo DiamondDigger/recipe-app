@@ -5,6 +5,6 @@ Status - in process..
 <img src="src/main/resources/templates/food.jpg">
 
 
-
 #### The schema looks like:
-![schema](src/main/resources/images/schema-Recipe.jpg)
+![schema](src/main/resources/images/newSchema-Recipe.png)
+
