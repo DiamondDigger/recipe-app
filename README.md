@@ -6,5 +6,5 @@ Status - in process..
 
 
 #### The schema looks like:
-![schema](src/main/resources/images/newSchema-Recipe.png)
+![schema](src/main/resources/images/schema_Recipe_App.png)
 
