@@ -4,15 +4,15 @@ import guru.springframework.recipeapp.domain.*;
 import guru.springframework.recipeapp.repositories.CategoryRepository;
 import guru.springframework.recipeapp.repositories.RecipeRepository;
 import guru.springframework.recipeapp.repositories.UnitOfMeasureRepository;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Component
-public class RecipeBootstrap implements CommandLineRunner {
+public class RecipeBootstrap {
 
     private RecipeRepository recipeRepository;
     private CategoryRepository categoryRepository;
@@ -105,15 +105,20 @@ public class RecipeBootstrap implements CommandLineRunner {
                 "Don’t have enough avocados? To extend a limited supply of avocados, add either sour cream or cottage cheese to your guacamole dip. Purists may be horrified, but so what? It tastes great.");
 
         guacRecipe.setNotes(guacRecipeNotes);
+
+        guacRecipe.getIngredients().add(new Ingredient("five avocados", new BigDecimal(5),eachUom, guacRecipe);
+        guacRecipe.getIngredients().add(new Ingredient("Kosher salt", new BigDecimal(".5"),teaspoonUom, guacRecipe);
+        guacRecipe.getIngredients().add(new Ingredient("Fresh lime juice or lemon juice", new BigDecimal(2),tablespoonUom, guacRecipe);
+        guacRecipe.getIngredients().add(new Ingredient("minced red onion or thinly sliced green onion", new BigDecimal(2),tablespoonUom, guacRecipe);
+        guacRecipe.getIngredients().add(new Ingredient("serrano chiles, stems and seeds removed, minced", new BigDecimal(2),eachUom, guacRecipe);
+        guacRecipe.getIngredients().add(new Ingredient("cilantro", new BigDecimal(2),tablespoonUom, guacRecipe);
+        guacRecipe.getIngredients().add(new Ingredient("freshly grated black pepper", new BigDecimal(2),dashUom, guacRecipe);
+        guacRecipe.getIngredients().add(new Ingredient("ripe tomato, seeds and pulp removed, chopped", new BigDecimal(".5"),eachUom, guacRecipe);
+
+        guacRecipe.getCategories().add(americanCategory);
+        guacRecipe.getCategories().add(mexicanCategory);
+
+        recipes.add(guacRecipe);
     }
 
-    @Override
-    public void run(String... args) throws Exception {
-        Recipe spicyGrilledChickenTacos = new Recipe();
-        spicyGrilledChickenTacos.setDescription("");
-
-        spicyGrilledChickenTacos.setPrepTime(20);
-        spicyGrilledChickenTacos.setCookTime(15);
-
-    }
 }
