@@ -7,6 +7,20 @@
 <body>
 <h1>You can find recipes here!</h1>
 <h3>And here we go</h3>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="recipe : ${recipes}">
+    <td th:text="${recipe.id}">ID</td>
+    <td th:text="${recipe.description}">Description</td>
+    </tr>
+    </tbody>
+</table>
 <!--<img src="food.jpg" width="100%" height="100%">-->
 </body>
 </html>
