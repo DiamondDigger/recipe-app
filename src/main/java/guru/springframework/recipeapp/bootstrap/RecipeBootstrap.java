@@ -1,5 +1,6 @@
 package guru.springframework.recipeapp.bootstrap;
 
+import guru.springframework.recipeapp.domain.Category;
 import guru.springframework.recipeapp.domain.Recipe;
 import guru.springframework.recipeapp.domain.UnitOfMeasure;
 import guru.springframework.recipeapp.repositories.CategoryRepository;
@@ -59,10 +60,22 @@ public class RecipeBootstrap implements CommandLineRunner {
             throw new RuntimeException("Expected UOM not found");
         }
         Optional<UnitOfMeasure> pintUomOptional = unitOfMeasureRepository.findByDescription("Pint");
-        if (!pinchUomOptional.isPresent()) {
+        if (!pintUomOptional.isPresent()) {
             throw new RuntimeException("Expected UOM not found");
         }
 
+        //get Categories
+        Optional<Category> americanCategoryOptional = categoryRepository.findByDescription("American");
+        if (!americanCategoryOptional.isPresent()) {
+            throw new RuntimeException("Expected Category not found");
+        }
+        Category americanCategory = americanCategoryOptional.get();
+
+        Optional<Category> mexicanCategoryOptional = categoryRepository.findByDescription("Mexican");
+        if (mexicanCategoryOptional.isPresent()) {
+            throw new RuntimeException("Expected Category not found");
+        }
+        Category mexicanCategory = mexicanCategoryOptional.get();
     }
 
     @Override
