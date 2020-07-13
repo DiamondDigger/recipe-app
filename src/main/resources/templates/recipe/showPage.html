@@ -25,6 +25,7 @@
             th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"></script>
 </head>
 <body>
+
 <div class="container-fluid" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -33,157 +34,199 @@
                     <div class="panel-heading">
                         <h1 class="panel-title" th:text="${recipe.description}">Recipe Description Here!</h1>
                     </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <h5>Categories:</h5>
-                            </div>
-                            <div class="col-md-9">
-                                <ul>
-                                    <li>cat one</li>
-                                    <li>cat two</li>
-                                    <li>cat three</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <h5>Prep Time:</h5>
-                            </div>
-                            <div class="col-md-3">
-                                <p>30 min</p>
-                            </div>
-                            <div class="col-md-3">
-                                <h5>Difficulty:</h5>
-                            </div>
-                            <div class="col-md-3">
-                                <p>Easy</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <h5>Cooktime:</h5>
-                            </div>
-                            <div class="col-md-3">
-                                <p>30 min</p>
-                            </div>
-                            <div class="col-md-3">
-                                <h5>Servings:</h5>
-                            </div>
-                            <div class="col-md-3">
-                                <p>4</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <h5>Source:</h5>
-                            </div>
-                            <div class="col-md-3">
-                                <p>30 min</p>
-                            </div>
-                            <div class="col-md-3">
-                                <h5>URL:</h5>
-                            </div>
-                            <div class="col-md-3">
-                                <p>http://www.example.com</p>
+                    <div class="card" style="width: width-auto">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Categories:</h5>
+                                </div>
+                                <div class="col-md-9">
+                                    <ul>
+                                        <li>cat one</li>
+                                        <li>cat two</li>
+                                        <li>cat three</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h1 class="panel-title" >Ingredients</h1>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <ul>
-                                    <li>1 Cup of milk</li>
-                                    <li>1 Teaspoon of chocolate</li>
-                                    <li>1 Teaspoon of Sugar</li>
-                                </ul>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Prep Time:</h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>30 min</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Difficulty:</h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>Easy</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Cooktime:</h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>30 min</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Servings:</h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>4</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Source:</h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>30 min</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>URL:</h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>http://www.example.com</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h1 class="panel-title" >Directions</h1>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Prep Time:</h5>
+                        </div>
+                        <div class="col-md-3">
+                            <p>30 min</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h5>Difficulty:</h5>
+                        </div>
+                        <div class="col-md-3">
+                            <p>Easy</p>
                         </div>
                     </div>
-                </div>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h1 class="panel-title" >Notes</h1>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Cooktime:</h5>
+                        </div>
+                        <div class="col-md-3">
+                            <p>30 min</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h5>Servings:</h5>
+                        </div>
+                        <div class="col-md-3">
+                            <p>4</p>
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Source:</h5>
+                        </div>
+                        <div class="col-md-3">
+                            <p>30 min</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h5>URL:</h5>
+                        </div>
+                        <div class="col-md-3">
+                            <p>http://www.example.com</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-</body>
-</html><!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-          crossorigin="anonymous"
-          th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
-
-    <title>Recipe Home Page</title>
-</head>
-<body>
-<div class="container-fluid" style="margin-top: 20px">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="panel panel-primary">
-
-                <div class="panel-heading">
-                    <h1 class="panel-title">Right place for delicious food </h1>
+            <div class="card" style="width-auto">
+                <div class="card-title">
+                    <h1 class="panel-title">Ingredients</h1>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul>
+                                <li>1 Cup of milk</li>
+                                <li>1 Teaspoon of chocolate</li>
+                                <li>1 Teaspoon of Sugar</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Directions</h1>
+                </div>
+
+                <div class="card" style="width-max: 100% ">
+                    <div class="card-title">
+                        <h1 class="panel-title">Directions</h1>
+                    </div>
+                    <div class="card-body">
+
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+                            dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                            nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                            quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+                            nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
+                            justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                            Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+                            porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in,
+                            viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.
+                            Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
+                            ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus
+                            eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed
+                            ipsum.</p>
+                    </div>
+                </div>
+
+
                 <div class="panel-body">
-                    <div class="panel-responsive" th:if="${not# lists.isEmpty(recipes)}">
-                        <table class="table table-hover", >
-                            <thead class="thead-inverse thead-dark">
-                            <tr>
-                                <th>ID</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:remove="all">
-                                <td class="bg-info" th:text="${recipe.id}">123</td>
-                                <td class="bg-warning" th:text="${recipe.description}">Golden Fish</td>
-                            </tr>
-                            <tr th:remove="all">
-                                <td class="bg-info" th:text="${recipe.id}">242</td>
-                                <td class="bg-warning" th:text="${recipe.description}">Great juicy cake</td>
-                            </tr>
-                            <tr th:each="recipe : ${recipes}">
-                                <td th:text="${recipe.id}">ID</td>
-                                <td th:text="${recipe.description}">Description</td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                                montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                                eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+                                fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+                                imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+                                Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate
+                                eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac,
+                                enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus
+                                viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+                                ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+                                Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper
+                                libero, sit amet adipiscing sem neque sed ipsum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Notes</h1>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                                montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                                eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+                                fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+                                imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+                                Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate
+                                eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac,
+                                enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus
+                                viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+                                ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+                                Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper
+                                libero, sit amet adipiscing sem neque sed ipsum.</p>
+                        </div>
                     </div>
                 </div>
             </div>

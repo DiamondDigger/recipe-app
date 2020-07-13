@@ -30,20 +30,26 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Description</th>
+                                <th>Details</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr th:remove="all">
-                                <td class="bg-info" th:text="${recipe.id}">123</td>
-                                <td class="bg-warning" th:text="${recipe.description}">Golden Fish</td>
+                                <td th:text="${recipe.id}">123</td>
+                                <td  th:text="${recipe.description}">Golden Fish</td>
+                                <td><button type="button" class="btn btn-info">Info</button></td>
+
                             </tr>
                             <tr th:remove="all">
-                                <td class="bg-info" th:text="${recipe.id}">242</td>
-                                <td class="bg-warning" th:text="${recipe.description}">Great juicy cake</td>
+                                <td  th:text="${recipe.id}">242</td>
+                                <td  th:text="${recipe.description}">Great juicy cake</td>
+                                <td><button type="button" class="btn btn-info">Info</button></td>
+
                             </tr>
                             <tr th:each="recipe : ${recipes}">
                                 <td th:text="${recipe.id}">ID</td>
                                 <td th:text="${recipe.description}">Description</td>
+                                <td><button type="button" class="btn btn-info">Info</button></td>
                             </tr>
                             </tbody>
                         </table>
