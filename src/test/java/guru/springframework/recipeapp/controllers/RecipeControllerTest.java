@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -29,9 +30,9 @@ class RecipeControllerTest {
 
     @BeforeEach
     void setUp() {
-//        MockitoAnnotations.initMocks(this);
-//
-//        recipeController = new RecipeController(recipeService);
+        MockitoAnnotations.initMocks(this);
+
+        recipeController = new RecipeController(recipeService);
 
         mockMvc = MockMvcBuilders.standaloneSetup(recipeController).build();
     }
