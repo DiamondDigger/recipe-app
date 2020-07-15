@@ -25,6 +25,8 @@
             th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"></script>
 </head>
 <body>
+<!--/*@thymesVar id="recipe" type="guru.springframework.recipeapp.domain.Recipe"*/-->
+
 <!--IMAGE AND IMAGE TITLE-->
 <div class="card">
     <img class="img-fluid" src="kitchen_header.jpg" alt="Card image cap">
@@ -34,6 +36,7 @@
             <p class="text-center">
                 This is a great time for your journey in tastelands</p>
         </h2>
+
         <h1><p class="text-center" style="color:rgb(221, 227, 200);" th:text="${recipe.description}">Your recipe</p></h1>
     </div>
 </div>
@@ -71,6 +74,7 @@
                 <div class="col-md-3">
                     <h5>Prep Time:</h5>
                 </div>
+
                 <div class="col-md-3">
                     <p th:text="${recipe.prepTime + ' Min'}">30 min</p>
                 </div>
@@ -192,6 +196,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
+
             <p class="card-text"  th:text="${recipe.notes.recipeNotes}">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
                 eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
                 montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
