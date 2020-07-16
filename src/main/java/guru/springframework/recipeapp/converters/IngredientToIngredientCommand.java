@@ -4,7 +4,10 @@ import guru.springframework.recipeapp.commands.IngredientCommand;
 import guru.springframework.recipeapp.domain.Ingredient;
 
 public class IngredientToIngredientCommand {
+    private final UnitOfMeasureToUnitOfMeasureCommand unitOfMeasureToUnitOfMeasureCommand;
+
     public IngredientToIngredientCommand(UnitOfMeasureToUnitOfMeasureCommand unitOfMeasureToUnitOfMeasureCommand) {
+        this.unitOfMeasureToUnitOfMeasureCommand = unitOfMeasureToUnitOfMeasureCommand;
     }
 
     public IngredientCommand convert(Ingredient ingredient) {

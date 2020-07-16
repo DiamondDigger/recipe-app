@@ -7,8 +7,10 @@ import guru.springframework.recipeapp.domain.UnitOfMeasure;
 import java.math.BigDecimal;
 
 public class IngredientCommandToIngredient {
-    public IngredientCommandToIngredient(UnitOfMeasureCommandToUnitOfMeasure unitOfMeasureCommandToUnitOfMeasure) {
+    private final UnitOfMeasureCommandToUnitOfMeasure unitOfMeasureCommandToUnitOfMeasure;
 
+    public IngredientCommandToIngredient(UnitOfMeasureCommandToUnitOfMeasure unitOfMeasureCommandToUnitOfMeasure) {
+        this.unitOfMeasureCommandToUnitOfMeasure = unitOfMeasureCommandToUnitOfMeasure;
     }
 
     public Ingredient convert(IngredientCommand ingredientCommand) {
