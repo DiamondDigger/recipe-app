@@ -38,6 +38,7 @@ public class UnitOfMeasureToUnitOfMeasureCommandTest {
         //when
         UnitOfMeasureCommand uomc = converter.convert(unitOfMeasure);
 
+        //then
         assertNotNull(uomc);
         assertEquals(LONG_ID, uomc.getId());
         assertEquals(DESCRIPTION, uomc.getDescription());
