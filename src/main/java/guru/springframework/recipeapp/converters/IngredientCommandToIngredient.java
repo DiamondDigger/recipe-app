@@ -1,20 +1,33 @@
 package guru.springframework.recipeapp.converters;
 
+import com.sun.istack.Nullable;
 import guru.springframework.recipeapp.commands.IngredientCommand;
 import guru.springframework.recipeapp.domain.Ingredient;
-import guru.springframework.recipeapp.domain.UnitOfMeasure;
+import lombok.Synchronized;
+import org.springframework.core.convert.converter.Converter;
 
-import java.math.BigDecimal;
-
-public class IngredientCommandToIngredient {
+public class IngredientCommandToIngredient implements Converter<IngredientCommand, Ingredient> {
     private final UnitOfMeasureCommandToUnitOfMeasure unitOfMeasureCommandToUnitOfMeasure;
 
     public IngredientCommandToIngredient(UnitOfMeasureCommandToUnitOfMeasure unitOfMeasureCommandToUnitOfMeasure) {
         this.unitOfMeasureCommandToUnitOfMeasure = unitOfMeasureCommandToUnitOfMeasure;
     }
 
+    @Synchronized
+    @Nullable
+    @Override
     public Ingredient convert(IngredientCommand ingredientCommand) {
-        Ingredient stub = new Ingredient("", new BigDecimal(2), new UnitOfMeasure());
-        return stub;
+        if (ingredientCommand != null) {
+            Ingredient ingredient = new Ingredient();
+            ingredient.setId(ingredientCommand.getId());
+            ingredient.setDescription(ingredientCommand.getDescription());
+            ingredient.setAmount(ingredientCommand.getAmount());
+            ingredient.setUnitOfMeasure(unitOfMeasureCommandToUnitOfMeasure
+                    .convert(ingredientCommand.getUnitOfMeasure()));
+
+            return ingredient;
+        }
+
+        return null;
     }
 }
