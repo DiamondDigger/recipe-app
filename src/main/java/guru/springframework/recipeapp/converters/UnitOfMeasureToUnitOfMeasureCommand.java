@@ -13,7 +13,7 @@ public class UnitOfMeasureToUnitOfMeasureCommand implements Converter<UnitOfMeas
     @Override
     public UnitOfMeasureCommand convert(UnitOfMeasure unitOfMeasure) {
         if (unitOfMeasure != null) {
-            UnitOfMeasureCommand uomc = new UnitOfMeasureCommand();
+            final UnitOfMeasureCommand uomc = new UnitOfMeasureCommand();
             uomc.setId(unitOfMeasure.getId());
             uomc.setDescription(unitOfMeasure.getDescription());
             return uomc;
