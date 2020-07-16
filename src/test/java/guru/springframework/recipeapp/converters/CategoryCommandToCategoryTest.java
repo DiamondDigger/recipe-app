@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CategoryCommandToCategoryTest {
-    public static final Long LONG_ID = 1L;
+    public static final Long LONG_VALUE = 1L;
     public static final String DESCRIPTION = "description";
 
     CategoryCommandToCategory converter;
@@ -32,7 +32,7 @@ public class CategoryCommandToCategoryTest {
     void testConvertTo(){
         //given
         CategoryCommand categoryCommand = new CategoryCommand();
-        categoryCommand.setId(LONG_ID);
+        categoryCommand.setId(LONG_VALUE);
         categoryCommand.setDescription(DESCRIPTION);
 
         //when
@@ -40,7 +40,7 @@ public class CategoryCommandToCategoryTest {
 
         //then
         assertNotNull(category);
-        assertEquals(LONG_ID, category.getId());
+        assertEquals(LONG_VALUE, category.getId());
         assertEquals(DESCRIPTION, category.getDescription());
     }
 }

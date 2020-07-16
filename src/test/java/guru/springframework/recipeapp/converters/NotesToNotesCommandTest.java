@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class NotesToNotesCommandTest {
-    public static final Long LONG_ID = 1L;
+    public static final Long LONG_VALUE = 1L;
     public static final String RECIPE_NOTES = "recipe notes";
 
     NotesToNotesCommand converter;
@@ -32,14 +32,14 @@ public class NotesToNotesCommandTest {
     void testConvert(){
         //given
         Notes notes = new Notes();
-        notes.setId(LONG_ID);
+        notes.setId(LONG_VALUE);
         notes.setRecipeNotes(RECIPE_NOTES);
 
         //when
         NotesCommand notesCommand = converter.convert(notes);
 
         assertNotNull(notes);
-        assertEquals(LONG_ID, notes.getId());
+        assertEquals(LONG_VALUE, notes.getId());
         assertEquals(RECIPE_NOTES, notes.getRecipeNotes());
     }
 }

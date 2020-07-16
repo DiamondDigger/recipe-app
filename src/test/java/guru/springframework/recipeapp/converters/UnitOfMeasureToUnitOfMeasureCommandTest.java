@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class UnitOfMeasureToUnitOfMeasureCommandTest {
     public final String DESCRIPTION = "description";
-    public final Long LONG_ID = 1L;
+    public final Long LONG_VALUE = 1L;
 
     UnitOfMeasureToUnitOfMeasureCommand converter;
 
@@ -32,7 +32,7 @@ public class UnitOfMeasureToUnitOfMeasureCommandTest {
     void testConvertTo() {
         //given
         UnitOfMeasure unitOfMeasure = new UnitOfMeasure();
-        unitOfMeasure.setId(LONG_ID);
+        unitOfMeasure.setId(LONG_VALUE);
         unitOfMeasure.setDescription(DESCRIPTION);
 
         //when
@@ -40,7 +40,7 @@ public class UnitOfMeasureToUnitOfMeasureCommandTest {
 
         //then
         assertNotNull(uomc);
-        assertEquals(LONG_ID, uomc.getId());
+        assertEquals(LONG_VALUE, uomc.getId());
         assertEquals(DESCRIPTION, uomc.getDescription());
 
     }
