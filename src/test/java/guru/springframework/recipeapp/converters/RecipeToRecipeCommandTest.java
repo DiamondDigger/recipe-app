@@ -1,11 +1,7 @@
 package guru.springframework.recipeapp.converters;
 
-import guru.springframework.recipeapp.commands.NotesCommand;
 import guru.springframework.recipeapp.commands.RecipeCommand;
-import guru.springframework.recipeapp.domain.Category;
-import guru.springframework.recipeapp.domain.Difficulty;
-import guru.springframework.recipeapp.domain.Ingredient;
-import guru.springframework.recipeapp.domain.Recipe;
+import guru.springframework.recipeapp.domain.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -68,8 +64,10 @@ public class RecipeToRecipeCommandTest {
         recipe.setDifficulty(DIFFICULTY);
         recipe.setUrl(URL);
 
-        NotesCommand notesCommand = new NotesCommand();
-        notesCommand.setId(NOTES_ID);
+        Notes notes = new Notes();
+        notes.setId(NOTES_ID);
+
+        recipe.setNotes(notes);
 
         Category category_1 = new Category();
         category_1.setId(CATEGORY_ID_1);

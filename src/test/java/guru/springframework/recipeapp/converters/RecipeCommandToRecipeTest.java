@@ -71,6 +71,8 @@ public class RecipeCommandToRecipeTest {
         NotesCommand notesCommand = new NotesCommand();
         notesCommand.setId(NOTES_ID);
 
+        recipeCommand.setNotes(notesCommand);
+
         CategoryCommand categoryCommand_1 = new CategoryCommand();
         categoryCommand_1.setId(CATEGORY_ID_1);
         CategoryCommand categoryCommand_2 = new CategoryCommand();
