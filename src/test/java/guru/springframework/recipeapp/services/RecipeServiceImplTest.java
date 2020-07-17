@@ -1,5 +1,7 @@
 package guru.springframework.recipeapp.services;
 
+import guru.springframework.recipeapp.converters.RecipeCommandToRecipe;
+import guru.springframework.recipeapp.converters.RecipeToRecipeCommand;
 import guru.springframework.recipeapp.domain.Recipe;
 import guru.springframework.recipeapp.repositories.RecipeRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,8 +18,17 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.*;
 
 class RecipeServiceImplTest {
+    public static final String DESCRIPTION_NEW = "new description";
+    private static final String DESCRIPTION_OLD = "old description";
 
+    @Mock
     RecipeServiceImpl recipeService;
+
+    @Mock
+    RecipeCommandToRecipe recipeCommandToRecipe;
+
+    @Mock
+    RecipeToRecipeCommand recipeToRecipeCommand;
 
     @Mock
     RecipeRepository recipeRepository;
@@ -26,7 +37,7 @@ class RecipeServiceImplTest {
     void setUp() {
         MockitoAnnotations.initMocks(this);
 
-        recipeService = new RecipeServiceImpl(recipeRepository);
+        recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
     }
 
     @Test
@@ -44,7 +55,7 @@ class RecipeServiceImplTest {
     }
 
     @Test
-    void findById(){
+    void findById() {
 
         Recipe recipe = Recipe.builder().id(2L).build();
         Optional<Recipe> recipeOptional = Optional.of(recipe);
