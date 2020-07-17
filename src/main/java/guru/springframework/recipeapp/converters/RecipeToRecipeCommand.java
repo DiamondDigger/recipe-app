@@ -5,7 +5,9 @@ import guru.springframework.recipeapp.commands.RecipeCommand;
 import guru.springframework.recipeapp.domain.Recipe;
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RecipeToRecipeCommand implements Converter<Recipe, RecipeCommand> {
     private final NotesToNotesCommand notesToNotesCommand;
     private final CategoryToCategoryCommand categoryToCategoryCommand;

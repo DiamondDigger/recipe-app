@@ -5,7 +5,9 @@ import guru.springframework.recipeapp.commands.IngredientCommand;
 import guru.springframework.recipeapp.domain.Ingredient;
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class IngredientCommandToIngredient implements Converter<IngredientCommand, Ingredient> {
     private final UnitOfMeasureCommandToUnitOfMeasure unitOfMeasureCommandToUnitOfMeasure;
 

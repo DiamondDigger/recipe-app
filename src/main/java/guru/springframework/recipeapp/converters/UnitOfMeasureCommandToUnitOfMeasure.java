@@ -5,8 +5,9 @@ import guru.springframework.recipeapp.commands.UnitOfMeasureCommand;
 import guru.springframework.recipeapp.domain.UnitOfMeasure;
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class UnitOfMeasureCommandToUnitOfMeasure implements Converter<UnitOfMeasureCommand, UnitOfMeasure> {
 
     @Synchronized
