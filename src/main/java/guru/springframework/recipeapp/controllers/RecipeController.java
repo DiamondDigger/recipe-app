@@ -4,7 +4,9 @@ import guru.springframework.recipeapp.commands.RecipeCommand;
 import guru.springframework.recipeapp.services.RecipeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -31,4 +33,15 @@ public class RecipeController {
 
         return "recipe/recipeForm";
     }
+
+    @PostMapping
+    @RequestMapping("recipe")
+    public String saveOrUpdate(@ModelAttribute RecipeCommand recipeCommand){
+       RecipeCommand savedRecipeCommand = recipeService.saveRecipeCommand(recipeCommand);
+
+        return "redirect:/recipe/showPage/" + savedRecipeCommand.getId();
+    }
+
+
+
 }
