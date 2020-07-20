@@ -47,7 +47,7 @@ class RecipeControllerTest {
 
         when(recipeService.findById(1L)).thenReturn(recipe);
 
-        mockMvc.perform(get("/recipe/showPage/1"))
+        mockMvc.perform(get("/recipe/1/showPage"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("recipe/showPage"))
                 .andExpect(model().attributeExists("recipe"));
@@ -63,9 +63,9 @@ class RecipeControllerTest {
         assertNotNull(command);
         assertEquals(2L, command.getId());
 
-        mockMvc.perform(post("recipe"))
+        mockMvc.perform(post("/recipe/2/update"))
+                .andExpect(status().isOk())
                 .andExpect(view().name("recipe/recipeForm"))
                 .andExpect(model().attributeExists("recipe"));
-
     }
 }
