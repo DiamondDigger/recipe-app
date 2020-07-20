@@ -39,8 +39,112 @@
 
         <h1><p class="text-center" style="color:rgb(221, 227, 200);">NEW RECIPE FORM</p></h1>
     </div>
+
 </div>
 
+<form th:object="${recipe}" th:action="@{/recipe/}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <div class="card">
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Enter Your Recipe Name" th:text="${description}">
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-1">
+
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="PrepTime"><h5>PrepTime: </h5></label>
+                    <input type="text" class="form-control" id="prepTime" th:field="*{prepTime}">
+                </div>
+                <div class="col-md-1">
+
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label><h5>Difficulty: </h5></label>
+                    <select class="custom-select custom-select-sm">
+                        <option selected>Open this select menu</option>
+                        <option value="1">Easy</option>
+                        <option value="2">Moderate</option>
+                        <option value="3">Kind of hard</option>
+                        <option value="4">Hard</option>
+                    </select>
+                    <p th:text="${difficulty}"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-1">
+
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="CookTime"><h5>CookTime: </h5></label>
+                    <input type="text" class="form-control" id="cooktime" th:field="*{cookTime}">
+                </div>
+                <div class="col-md-1">
+
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="Servings"><h5>Servings: </h5></label>
+                    <input type="text" class="form-control" id="servings" th:field="*{servings}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="Source"><h5>Source: </h5></label>
+                    <input type="text" class="form-control" id="source"th:field="*{source}">
+                </div>
+                <div class="col-md-1">
+
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="Url"><h5>URL: </h5></label>
+                    <input type="text" class="form-control" id="url" placeholder="name@example.com" th:field="*{url}">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+            <div class="form-group col-md-5">
+                <label for="exampleFormControlTextarea1"><h5>Directions:</h5></label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{notes.recipeNotes}"></textarea>
+            </div>
+
+            <div class="form-group col-md-5">
+                <label for="exampleFormControlTextarea2"><h5>Notes:</h5></label>
+                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"th:field="*{directions}"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+
+            </div>
+
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary btn-lg "> Submit Recipe</button>
+            </div>
+        </div>
+    </div>
+
+</form>
 
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
