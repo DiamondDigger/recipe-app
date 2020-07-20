@@ -1,5 +1,6 @@
 package guru.springframework.recipeapp.controllers;
 
+import guru.springframework.recipeapp.commands.RecipeCommand;
 import guru.springframework.recipeapp.domain.Recipe;
 import guru.springframework.recipeapp.services.RecipeService;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,8 +13,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -37,7 +42,7 @@ class RecipeControllerTest {
     }
 
     @Test
-    void getRecipe() throws Exception {
+    void getRecipeById() throws Exception {
         Recipe recipe = Recipe.builder().id(1L).build();
 
         when(recipeService.findById(1L)).thenReturn(recipe);
@@ -46,5 +51,21 @@ class RecipeControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("recipe/showPage"))
                 .andExpect(model().attributeExists("recipe"));
+    }
+
+    @Test
+    void testGetUpdateRecipeView() throws Exception {
+        RecipeCommand command = new RecipeCommand();
+        command.setId(2L);
+
+        when(recipeService.findCommandById(anyLong())).thenReturn(command);
+
+        assertNotNull(command);
+        assertEquals(2L, command.getId());
+
+        mockMvc.perform(post("recipe"))
+                .andExpect(view().name("recipe/recipeForm"))
+                .andExpect(model().attributeExists("recipe"));
+
     }
 }

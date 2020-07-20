@@ -34,6 +34,11 @@ public class RecipeController {
         return "recipe/recipeForm";
     }
 
+    @RequestMapping()
+    public String updateRecipe(@PathVariable String id, Model model ){
+
+    }
+
     @PostMapping("recipe")
     public String saveOrUpdate(@ModelAttribute RecipeCommand recipeCommand){
        RecipeCommand savedRecipeCommand = recipeService.saveRecipeCommand(recipeCommand);
