@@ -50,7 +50,7 @@
                                 <!--/*@thymesVar id="recipe" type="guru.springframework.recipeapp.domain.Recipe"*/-->
                                 <td th:text="${recipe.id}">ID</td>
                                 <td th:text="${recipe.description}">Description</td>
-                                <td><a class="btn btn-outline-secondary" href="#" th:href="@{'recipe/showPage/' + ${recipe.id}}" role="button">View</a></button></td>
+                                <td><a class="btn btn-outline-secondary" href="#" th:href="@{'recipe/' + ${recipe.id} + '/showPage'}" role="button">View</a></button></td>
                             </tr>
                             </tbody>
                         </table>
