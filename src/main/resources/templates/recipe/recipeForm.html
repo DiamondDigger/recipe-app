@@ -37,7 +37,8 @@
                 This is a great time for your journey in tastelands</p>
         </h2>
 
-        <h1><p class="text-center" style="color:rgb(221, 227, 200);">NEW RECIPE FORM</p></h1>
+        <h1><p class="text-center" style="color:rgb(221, 227, 200);" th:text="${recipe.description}">NEW RECIPE FORM</p>
+        </h1>
     </div>
 
 </div>
@@ -51,7 +52,7 @@
             </div>
 
             <div class="col-md-4">
-                <input type="text" class="form-control" placeholder="Enter Your Recipe Name" th:text="${description}">
+                <input type="text" class="form-control" placeholder="Enter Your Recipe Name" th:field="*{description}">
             </div>
         </div>
         <div class="card-body">
@@ -69,15 +70,9 @@
                 </div>
 
                 <div class="form-group col-md-4">
-                    <label><h5>Difficulty: </h5></label>
-                    <select class="custom-select custom-select-sm">
-                        <option selected>Open this select menu</option>
-                        <option value="1">Easy</option>
-                        <option value="2">Moderate</option>
-                        <option value="3">Kind of hard</option>
-                        <option value="4">Hard</option>
-                    </select>
-                    <p th:text="${difficulty}"></p>
+                    <label for="Difficulty"><h5>Difficulty: </h5></label>
+                    <input type="text" class="form-control" id="difficulty" th:field="*{difficulty}"
+                           placeholder="EASY, SOFT, MODERATE, HARD">
                 </div>
             </div>
 
@@ -106,7 +101,7 @@
 
                 <div class="form-group col-md-4">
                     <label for="Source"><h5>Source: </h5></label>
-                    <input type="text" class="form-control" id="source"th:field="*{source}">
+                    <input type="text" class="form-control" id="source" th:field="*{source}">
                 </div>
                 <div class="col-md-1">
 
@@ -125,12 +120,14 @@
             </div>
             <div class="form-group col-md-5">
                 <label for="exampleFormControlTextarea1"><h5>Directions:</h5></label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{directions}"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                          th:field="*{directions}"></textarea>
             </div>
 
             <div class="form-group col-md-5">
                 <label for="exampleFormControlTextarea2"><h5>Notes:</h5></label>
-                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"th:field="*{notes.recipeNotes}"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"
+                          th:field="*{notes.recipeNotes}"></textarea>
             </div>
         </div>
         <div class="row">
