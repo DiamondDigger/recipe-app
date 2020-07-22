@@ -2,7 +2,6 @@ package guru.springframework.recipeapp.controllers;
 
 import guru.springframework.recipeapp.commands.IngredientCommand;
 import guru.springframework.recipeapp.commands.RecipeCommand;
-import guru.springframework.recipeapp.domain.Ingredient;
 import guru.springframework.recipeapp.services.IngredientService;
 import guru.springframework.recipeapp.services.RecipeService;
 import org.junit.jupiter.api.BeforeEach;
@@ -57,7 +56,7 @@ public class IngredientControllerTest {
     }
 
     @Test
-    void testShowIngredient(){
+    void testShowIngredient() throws Exception {
         //given
         IngredientCommand ingredientCommand = new IngredientCommand();
 
