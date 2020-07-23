@@ -1,9 +1,7 @@
 package guru.springframework.recipeapp.commands;
 
 import guru.springframework.recipeapp.domain.Difficulty;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;

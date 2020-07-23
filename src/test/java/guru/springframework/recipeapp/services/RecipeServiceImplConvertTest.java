@@ -26,6 +26,9 @@ class RecipeServiceImplConvertTest {
     RecipeServiceImpl recipeService;
 
     @Autowired
+    IngredientService ingredientService;
+
+    @Autowired
     RecipeCommandToRecipe recipeCommandToRecipe;
 
     @Autowired
@@ -38,7 +41,8 @@ class RecipeServiceImplConvertTest {
     void setUp() {
         MockitoAnnotations.initMocks(this);
 
-        recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
+        recipeService = new RecipeServiceImpl(recipeRepository,
+                recipeCommandToRecipe, recipeToRecipeCommand);
     }
 
     @Transactional
@@ -46,7 +50,10 @@ class RecipeServiceImplConvertTest {
     void saveRecipeCommand() {
         List<Recipe> recipes = new ArrayList<>(2);
 
-        Recipe recipeForRepo = Recipe.builder().id(2L).description(DESCRIPTION_OLD).build();
+        Recipe recipeForRepo = new Recipe();
+        recipeForRepo.setId(2L);
+        recipeForRepo.setDescription(DESCRIPTION_OLD);
+
         recipes.add(recipeForRepo);
         recipeRepository.saveAll(recipes);
 

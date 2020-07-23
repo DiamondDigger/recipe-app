@@ -57,7 +57,9 @@ class RecipeServiceImplTest {
     @Test
     void findById() {
 
-        Recipe recipe = Recipe.builder().id(2L).build();
+//        Recipe recipe = Recipe.builder().id(2L).build();
+        Recipe recipe = new Recipe();
+        recipe.setId(2L);
         Optional<Recipe> recipeOptional = Optional.of(recipe);
 
         when(recipeRepository.findById(anyLong())).thenReturn(recipeOptional);

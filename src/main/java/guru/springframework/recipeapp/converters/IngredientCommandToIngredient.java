@@ -20,7 +20,7 @@ public class IngredientCommandToIngredient implements Converter<IngredientComman
     @Override
     public Ingredient convert(IngredientCommand ingredientCommand) {
         if (ingredientCommand != null) {
-            Ingredient ingredient = new Ingredient();
+            final Ingredient ingredient = new Ingredient();
             ingredient.setId(ingredientCommand.getId());
             ingredient.setDescription(ingredientCommand.getDescription());
             ingredient.setAmount(ingredientCommand.getAmount());

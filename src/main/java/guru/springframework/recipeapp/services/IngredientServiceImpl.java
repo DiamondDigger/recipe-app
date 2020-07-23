@@ -5,19 +5,19 @@ import guru.springframework.recipeapp.converters.IngredientToIngredientCommand;
 import guru.springframework.recipeapp.domain.Recipe;
 import guru.springframework.recipeapp.repositories.RecipeRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Slf4j
+@Service
 public class IngredientServiceImpl implements IngredientService {
 
-    final private RecipeService recipeService;
     final private RecipeRepository recipeRepository;
     final private IngredientToIngredientCommand ingredientToIngredientCommand;
 
-    public IngredientServiceImpl(RecipeService recipeService, RecipeRepository recipeRepository,
+    public IngredientServiceImpl(RecipeRepository recipeRepository,
                                  IngredientToIngredientCommand ingredientToIngredientCommand) {
-        this.recipeService = recipeService;
         this.recipeRepository = recipeRepository;
         this.ingredientToIngredientCommand = ingredientToIngredientCommand;
     }
@@ -34,15 +34,15 @@ public class IngredientServiceImpl implements IngredientService {
 
         Recipe recipe = optionalRecipe.get();
 
-        Optional<IngredientCommand> optionalIngredientCommand1 = recipe.getIngredients().stream()
+        Optional<IngredientCommand> optionalIngredientCommand = recipe.getIngredients().stream()
                 .filter(ingredient -> ingredient.getId().equals(ingredientId))
                 .map(ingredientToIngredientCommand::convert).findFirst();
 
-        if (optionalIngredientCommand1 == null) {
+        if (optionalIngredientCommand == null) {
             //todo impl error handler
             log.debug("Ingredient with such id not found: " + ingredientId);
         }
 
-        return optionalIngredientCommand1.get();
+        return optionalIngredientCommand.get();
     }
 }

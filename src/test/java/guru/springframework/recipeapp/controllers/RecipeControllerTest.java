@@ -45,7 +45,10 @@ class RecipeControllerTest {
 
     @Test
     void getRecipeById() throws Exception {
-        Recipe recipe = Recipe.builder().id(1L).build();
+//        Recipe recipe = Recipe.builder().id(1L).build();
+
+        Recipe recipe = new Recipe();
+        recipe.setId(1L);
 
         when(recipeService.findById(1L)).thenReturn(recipe);
 
