@@ -38,6 +38,5 @@ public class IngredientController {
                Long.valueOf(recipeId),Long.valueOf(ingredientId)));
 
         return "recipe/ingredient/showPage";
-
     }
 }
