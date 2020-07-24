@@ -11,3 +11,9 @@ Status - in process..
 #### The schema looks like:
 ![schema](src/main/resources/templates/images/schema_Recipe_App.png)
 
+
+### Interfaces
+<img src="src/main/resources/templates/images/InetfacesRecipeApp.png">
+
+### CommandObject
+<img src="src/main/resources/templates/images/CommandObjectRecipeApp.png">
