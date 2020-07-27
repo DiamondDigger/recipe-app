@@ -3,10 +3,13 @@ package guru.springframework.recipeapp.services;
 import guru.springframework.recipeapp.commands.UnitOfMeasureCommand;
 import guru.springframework.recipeapp.converters.UnitOfMeasureToUnitOfMeasureCommand;
 import guru.springframework.recipeapp.repositories.UnitOfMeasureRepository;
+import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
+@Service
 public class UnitOfMeasureServiceImpl implements UnitOfMeasureService {
 
     private final UnitOfMeasureRepository unitOfMeasureRepository;
@@ -20,7 +23,10 @@ public class UnitOfMeasureServiceImpl implements UnitOfMeasureService {
 
     @Override
     public Set<UnitOfMeasureCommand> listAllUoms() {
-        HashSet<UnitOfMeasureCommand> stub = new HashSet<>();
-        return stub;
+
+        return StreamSupport.stream(unitOfMeasureRepository.findAll()
+                .spliterator(), false)
+                .map(unitOfMeasureToUnitOfMeasureCommand::convert)
+                .collect(Collectors.toSet());
     }
 }

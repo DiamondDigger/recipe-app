@@ -21,7 +21,8 @@ class UnitOfMeasureServiceImplTest {
     @Mock
     UnitOfMeasureRepository unitOfMeasureRepository;
 
-    UnitOfMeasureToUnitOfMeasureCommand unitOfMeasureToUnitOfMeasureCommand;
+    UnitOfMeasureToUnitOfMeasureCommand unitOfMeasureToUnitOfMeasureCommand =
+            new UnitOfMeasureToUnitOfMeasureCommand();
 
     UnitOfMeasureService unitOfMeasureService;
 
@@ -53,7 +54,7 @@ class UnitOfMeasureServiceImplTest {
 
         //then
         assertNotNull(unitOfMeasures);
-        assertEquals(2, unitOfMeasures.size());
+        assertEquals(2, commands.size());
         verify(unitOfMeasureRepository, times(1)).findAll();
     }
 }
