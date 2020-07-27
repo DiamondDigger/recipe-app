@@ -62,6 +62,7 @@ public class IngredientServiceImpl implements IngredientService {
         if (!optionalRecipe.isPresent()) {
             //todo toss error if not found!
             log.error("Recipe not found for id: " + ingredientCommand.getRecipeId());
+            return new IngredientCommand();
         } else {
 
             Recipe recipe = optionalRecipe.get();
@@ -71,6 +72,7 @@ public class IngredientServiceImpl implements IngredientService {
                     .filter(ingredient -> ingredient.getId().equals(ingredientCommand.getId()))
                     .findFirst();
             if (!ingredientOptional.isPresent()) {
+                //add new Ingredient
                 recipe.addIngredient(ingredientCommandToIngredient.convert(ingredientCommand));
             } else {
 
@@ -85,7 +87,12 @@ public class IngredientServiceImpl implements IngredientService {
 
             Recipe savedRecipe = recipeRepository.save(recipe);
             //todo check for fail
+            return ingredientToIngredientCommand.convert(
+                    savedRecipe.getIngredients()
+                    .stream()
+                    .filter(ingredient -> ingredient.getId().equals(ingredientCommand.getId()))
+                    .findFirst()
+                    .get()) ;
         }
-        return new IngredientCommand();
     }
 }
