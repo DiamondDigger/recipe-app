@@ -45,4 +45,10 @@ public class IngredientServiceImpl implements IngredientService {
 
         return optionalIngredientCommand.get();
     }
+
+    @Override
+    public IngredientCommand saveIngredientCommand(IngredientCommand ingredientCommand) {
+        IngredientCommand stub = new IngredientCommand();
+        return stub;
+    }
 }

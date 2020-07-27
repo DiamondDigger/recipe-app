@@ -15,8 +15,9 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 class IngredientServiceImplTest {
 
@@ -71,6 +72,32 @@ class IngredientServiceImplTest {
         assertNotNull(ingredientThree);
         assertEquals(3L, ingredientCommand.getId());
         assertEquals(1L, ingredientCommand.getRecipeId());
+
+    }
+
+    @Test
+    void saveRecipeCommand(){
+        //given
+        IngredientCommand ingredientCommand = new IngredientCommand();
+        ingredientCommand.setId(3L);
+
+        Optional<Recipe> recipeOptional = Optional.of(new Recipe());
+
+        Recipe savedRecipe = new Recipe();
+        savedRecipe.setId(1L);
+        savedRecipe.addIngredient(new Ingredient());
+        savedRecipe.getIngredients().iterator().next().setId(3L);
+
+        when(recipeRepository.findById(anyLong())).thenReturn(recipeOptional);
+        when(recipeRepository.save(any())).thenReturn(savedRecipe);
+
+        //when
+        IngredientCommand savedCommand = ingredientService.saveIngredientCommand(ingredientCommand);
+
+        //then
+        assertEquals(3L, savedCommand.getId());
+        verify(recipeRepository,times(1)).findById(anyLong());
+        verify(recipeRepository,times(1)).save(any(Recipe.class));
 
     }
 }
