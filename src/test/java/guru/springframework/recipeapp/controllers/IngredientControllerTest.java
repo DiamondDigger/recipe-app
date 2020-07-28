@@ -91,7 +91,7 @@ public class IngredientControllerTest {
         //then
         mockMvc.perform(get("/recipe/1/ingredient/2/update"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/recipe/ingredient/ingredientForm"))
+                .andExpect(view().name("recipe/ingredient/ingredientForm"))
                 .andExpect(model().attributeExists("ingredient"))
                 .andExpect(model().attributeExists("uomList"));
     }
@@ -104,7 +104,7 @@ public class IngredientControllerTest {
 
         when(ingredientService.saveIngredientCommand(any())).thenReturn(command);
 
-        mockMvc.perform(post("/recipe/3/ingredient/")
+        mockMvc.perform(post("/recipe/3/ingredient")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .param("id","")
                 .param("description", "some description"))
