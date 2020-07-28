@@ -91,6 +91,7 @@ class IngredientServiceImplTest {
         //given
         IngredientCommand ingredientCommand = new IngredientCommand();
         ingredientCommand.setId(3L);
+        ingredientCommand.setRecipeId(2L);
 
         Optional<Recipe> recipeOptional = Optional.of(new Recipe());
 
