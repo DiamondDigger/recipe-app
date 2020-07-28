@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -53,6 +54,15 @@ public class IngredientController {
                 Long.valueOf(recipeId),Long.valueOf(ingredientId)));
         model.addAttribute("uomList", unitOfMeasureService.listAllUoms());
 
-        return "/recipe/ingredient/ingredientForm";
+        return "recipe/ingredient/ingredientForm";
+    }
+
+    @PostMapping
+    @RequestMapping("/recipe/{recipeId}/ingredient")
+    public String saveOrUpdateIngredient(@PathVariable String recipeId,
+                                         @PathVariable String ingredientId,
+                                         Model model){
+
+        return "";
     }
 }
