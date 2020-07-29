@@ -140,7 +140,7 @@
 
                             <h6 th:each="ingredient: ${recipe.ingredients}"
                                 th:text="${(ingredient.amount +
-                                ' ' + ingredient.unitOfMeasure.description +
+                                ' ' + ingredient.uom.description +
                                 ' ' + '- '+ ingredient.description)}"> All that you need is here! </h6>
                         </div>
                     </div>

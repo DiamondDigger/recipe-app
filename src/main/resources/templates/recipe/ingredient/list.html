@@ -40,7 +40,7 @@
                                 <!--/*@thymesVar id="recipe" type="guru.springframework.recipeapp.domain.Recipe"*/-->
                                 <td th:text="${ingredient.id}">ID</td>
                                 <td th:text="${ingredient.amount}">Amount</td>
-                                <td th:text="${ingredient.unitOfMeasure.description}">Unit Of Measure</td>
+                                <td th:text="${ingredient.uom.description}">Unit Of Measure</td>
                                 <td th:text="${ingredient.description}">Description</td>
                                 <td><a class="btn btn-outline-secondary" href="#" th:href="@{'recipe/' + ${recipe.id} + '/showPage'}" role="button">View</a></button></td>
                             </tr>
