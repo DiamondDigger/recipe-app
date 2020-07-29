@@ -61,7 +61,7 @@
                         <li class="list-group-item" style="padding: 0% 10%" th:text="${ingredient.id}">Ingredient ID</li>
                         <h5 style="padding: 3% 5%">Amount and Description</h5>
                         <li class="list-group-item" style="padding: 0% 10%"
-                            th:text="${ingredient.amount} + ' ' + ${ingredient.unitOfMeasure.getDescription()} + ' ' + ${ingredient.description}">
+                            th:text="${ingredient.amount} + ' ' + ${ingredient.uom.getDescription()} + ' ' + ${ingredient.description}">
                             Amount and Description
                         </li>
                     </ul>
