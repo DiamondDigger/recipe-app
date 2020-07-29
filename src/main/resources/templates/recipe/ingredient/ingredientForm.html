@@ -25,19 +25,21 @@
             th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"></script>
 </head>
 <body>
-<!--/*@thymesVar id="recipe" type="guru.springframework.recipeapp.domain.Recipe"*/-->
+
 
 <!--IMAGE AND IMAGE TITLE-->
 
 <!--CATEGORIES-->
 <div class="card bg-dark text-black">
-    <form th:object="${ingredient}" th:action="@{'/recipe/' + ${ingredient.getRecipeId()} + '/ingredient'} "
-          method="post">
-        <input type="hidden" th:field="*{id}"/>
-        <!--    <img src="fish.jpg" class="card-img" alt="...">-->
-        <img src="ingredients.jpg" class="card-img" alt="...">
+    <!--/*@thymesVar id="ingredient" type="guru.springframework.commands.IngredientCommand"*/-->
+    <!--    <form th:object="${ingredient}" th:action="@{'/recipe/' + ${ingredient.getRecipeId()} + '/ingredient'} " method="post">-->
+    <!--        <input type="hidden" th:field="*{id}"/>-->
+    <img src="ingredients.jpg" class="card-img" alt="...">
 
-        <div class="card-img-overlay">
+    <div class="card-img-overlay">
+        <form th:object="${ingredient}" th:action="@{'/recipe/' + ${ingredient.getRecipeId()} + '/ingredient'} "
+              method="post">
+            <input type="hidden" th:field="*{id}"/>
 
             <div class="row d-flex justify-content-md-start">
                 <h2 class="card-title" style="padding: 10% 0% 3% 5%; color:rgb(253, 254, 254);">
@@ -46,8 +48,7 @@
                     <div class="card-title">
                         <h1>
                             <p class="text-center" th:text="${ingredient.description}">
-                                Your
-                                ingredient</p>
+                                Your ingredient</p>
                         </h1>
                     </div>
                 </h2>
@@ -94,8 +95,8 @@
                 <button type="submit" class="btn btn-primary btn-lg "> Submit Ingredient</button>
             </div>
 
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 
 
