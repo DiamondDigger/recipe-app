@@ -46,6 +46,7 @@ public class IngredientController {
         return "recipe/ingredient/showPage";
     }
 
+    @GetMapping
     @RequestMapping("recipe/{recipeId}/ingredient/new")
     public String newIngredient (@PathVariable String recipeId, Model model){
 
