@@ -73,9 +73,13 @@ public class IngredientServiceImpl implements IngredientService {
                     .stream()
                     .filter(ingredient -> ingredient.getId().equals(ingredientCommand.getId()))
                     .findFirst();
+
             if (!ingredientOptional.isPresent()) {
                 //add new Ingredient
-                recipe.addIngredient(ingredientCommandToIngredient.convert(ingredientCommand));
+                Ingredient ingredient = ingredientCommandToIngredient.convert(ingredientCommand);
+                ingredient.setRecipe(recipe);
+                recipe.addIngredient(ingredient);
+
             } else {
 
                 Ingredient ingredientFound = ingredientOptional.get();
@@ -88,13 +92,24 @@ public class IngredientServiceImpl implements IngredientService {
             }
 
             Recipe savedRecipe = recipeRepository.save(recipe);
-            //todo check for fail
-            return ingredientToIngredientCommand.convert(
-                    savedRecipe.getIngredients()
+
+            Optional<Ingredient> savedIngredientOptional = savedRecipe.getIngredients()
                     .stream()
                     .filter(ingredient -> ingredient.getId().equals(ingredientCommand.getId()))
-                    .findFirst()
-                    .get()) ;
+                    .findFirst();
+
+            //check by description
+            if (!savedIngredientOptional.isPresent()) {
+                savedIngredientOptional = recipe.getIngredients()
+                        .stream()
+                        .filter(ingredient -> ingredient.getDescription().equals(ingredientCommand.getDescription()))
+                        .filter(ingredient -> ingredient.getAmount().equals(ingredientCommand.getAmount()))
+                        .filter(ingredient -> ingredient.getUom().getId().equals(ingredientCommand.getUom().getId()))
+                        .findFirst();
+            }
+
+            //todo check for fail
+            return ingredientToIngredientCommand.convert(savedIngredientOptional.get());
         }
     }
 }
